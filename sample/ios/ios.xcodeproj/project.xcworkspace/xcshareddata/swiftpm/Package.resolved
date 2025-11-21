@@ -1,0 +1,15 @@
+{
+  "originHash" : "d9ccbe89c3ff8ac0d640494c2e17961e41ca2de1f9442dfa530890e565c7ce35",
+  "pins" : [
+    {
+      "identity" : "expo-live-activity",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/software-mansion-labs/expo-live-activity.git",
+      "state" : {
+        "branch" : "9979cee",
+        "revision" : "9979ceeee66365f9b77a08c4a2d9e6605102ceb9"
+      }
+    }
+  ],
+  "version" : 3
+}

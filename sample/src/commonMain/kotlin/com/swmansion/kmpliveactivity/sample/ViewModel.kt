@@ -71,6 +71,10 @@ internal object ViewModel {
     _state.update { it.copy(newContentState = it.newContentState.copy(timerDuration = duration)) }
   }
 
+  fun setShowImages(show: Boolean) {
+    _state.update { it.copy(newContentState = it.newContentState.copy(showImages = show)) }
+  }
+
   fun setBackgroundColor(color: String) {
     _state.update { state -> state.copy(newAttributes = state.newAttributes.copy(color)) }
   }

@@ -6,6 +6,8 @@ public interface NativeLiveActivityManager {
     title: String,
     subtitle: String?,
     timerEnd: Double,
+    largeImage: String?,
+    smallImage: String?,
     backgroundColor: String?,
     titleColor: String?,
     subtitleColor: String?,
@@ -14,7 +16,21 @@ public interface NativeLiveActivityManager {
     deepLink: String?,
   ): String?
 
-  public fun updateWith(id: String, title: String, subtitle: String?, timerEnd: Double)
+  public fun updateWith(
+    id: String,
+    title: String,
+    subtitle: String?,
+    timerEnd: Double,
+    largeImage: String?,
+    smallImage: String?,
+  )
 
-  public fun endWith(id: String, title: String, subtitle: String?, timerEnd: Double)
+  public fun endWith(
+    id: String,
+    title: String,
+    subtitle: String?,
+    timerEnd: Double,
+    largeImage: String?,
+    smallImage: String?,
+  )
 }

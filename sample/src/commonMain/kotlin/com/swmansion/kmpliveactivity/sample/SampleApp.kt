@@ -1,14 +1,16 @@
 package com.swmansion.kmpliveactivity.sample
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.calculateEndPadding
 import androidx.compose.foundation.layout.calculateStartPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.ListItem
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.darkColorScheme
@@ -35,16 +37,16 @@ fun SampleApp() {
       LazyColumn(
         contentPadding =
           PaddingValues(
-            padding.calculateStartPadding(layoutDirection) + 16.dp,
+            padding.calculateStartPadding(layoutDirection),
             padding.calculateTopPadding() + 8.dp,
-            padding.calculateEndPadding(layoutDirection) + 16.dp,
+            padding.calculateEndPadding(layoutDirection),
             padding.calculateBottomPadding() + 140.dp,
-          ),
-        verticalArrangement = Arrangement.spacedBy(16.dp),
+          )
       ) {
         item {
           Text(
             text = "Content state",
+            modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 8.dp),
             color = MaterialTheme.colorScheme.primary,
             style = MaterialTheme.typography.titleSmall,
           )
@@ -73,9 +75,17 @@ fun SampleApp() {
           )
         }
         item {
+          ListItem(
+            headlineContent = { Text("Show images") },
+            modifier =
+              Modifier.clickable { ViewModel.setShowImages(!state.newContentState.showImages) },
+            trailingContent = { Switch(state.newContentState.showImages, ViewModel::setShowImages) },
+          )
+        }
+        item {
           Text(
             text = "Attributes",
-            modifier = Modifier.padding(top = 8.dp),
+            modifier = Modifier.padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 8.dp),
             color = MaterialTheme.colorScheme.primary,
             style = MaterialTheme.typography.titleSmall,
           )

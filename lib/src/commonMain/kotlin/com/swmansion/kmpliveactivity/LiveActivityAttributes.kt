@@ -24,10 +24,16 @@ public data class LiveActivityAttributes(
    * @param title the title.
    * @param subtitle the subtitle.
    * @param timerEnd the end time of the timer (in epoch milliseconds); `null` hides the timer.
+   * @param largeImage defines the image for the Lock Screen and expanded Dynamic Island
+   *   presentations. This should match the name of an asset in the Live Activity target.
+   * @param smallImage defines the image for the compact and minimal Dynamic Island presentations.
+   *   This should match the name of an asset in the Live Activity target.
    */
   public data class ContentState(
     internal val title: String,
     internal val subtitle: String? = null,
     internal val timerEnd: Long? = null,
+    internal val largeImage: String? = null,
+    internal val smallImage: String? = null,
   )
 }

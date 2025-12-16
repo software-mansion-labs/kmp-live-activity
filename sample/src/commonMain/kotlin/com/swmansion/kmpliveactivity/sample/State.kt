@@ -38,6 +38,7 @@ internal data class State(
       val title: String = "Title",
       val subtitle: String = "Subtitle",
       val timerDuration: String = "1m",
+      val showImages: Boolean = true,
     ) {
       fun toLiveActivityContentState() =
         LiveActivityAttributes.ContentState(
@@ -45,6 +46,8 @@ internal data class State(
           subtitle.takeIf(String::isNotBlank),
           @OptIn(ExperimentalTime::class)
           Duration.parseOrNull(timerDuration)?.let(Clock.System.now()::plus)?.toEpochMilliseconds(),
+          if (showImages) "largeImage" else null,
+          if (showImages) "smallImage" else null,
         )
     }
   }

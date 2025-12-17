@@ -31,8 +31,7 @@ public class NativeLiveActivityManagerImpl {
           subtitleColor: subtitleColor,
           progressViewTint: progressViewTint,
           progressViewLabelColor: progressViewLabelColor,
-          deepLinkUrl: deepLink,
-          contentFit: "contain"
+          deepLinkUrl: deepLink
         ),
         content: .init(
           state: LiveActivityAttributes.ContentState(

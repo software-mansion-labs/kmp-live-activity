@@ -9,7 +9,7 @@ let package = Package(
   dependencies: [
     .package(
       url: "https://github.com/software-mansion-labs/expo-live-activity.git",
-      revision: "9979cee"
+      revision: "5f5fb56"
     ),
   ],
   targets: [

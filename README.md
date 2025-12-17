@@ -15,7 +15,7 @@ Add the Kotlin Multiplatform library to the app&nbsp;module:
 
 ```toml
 [versions]
-kmpLiveActivity = "0.1.0"
+kmpLiveActivity = "0.2.0"
 
 [libraries]
 swmansion-kmpLiveActivity = { module = "com.swmansion.kmpliveactivity:kmp-live-activity", version.ref = "kmpLiveActivity" }
@@ -52,7 +52,7 @@ Embed in Application. Click&nbsp;Finish.
 
 Select File → Add Package Dependencies. In the search bar, enter
 `https://github.com/software-mansion-labs/kmp-live-activity`. Set Dependency Rule to Exact Version,
-and enter `0.1.0`. Ensure that the main project (usually `iosApp`) is selected for Add to Project,
+and enter `0.2.0`. Ensure that the main project (usually `iosApp`) is selected for Add to Project,
 and click Add Package. Under Add to Target, select the app target. Click Add Package. Add the
 package to the `LiveActivity` target&nbsp;analogously.
 

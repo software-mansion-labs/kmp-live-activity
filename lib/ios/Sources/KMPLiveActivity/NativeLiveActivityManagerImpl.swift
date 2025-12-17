@@ -13,6 +13,8 @@ public class NativeLiveActivityManagerImpl {
     title: String,
     subtitle: String?,
     timerEnd: Double,
+    largeImage: String?,
+    smallImage: String?,
     backgroundColor: String?,
     titleColor: String?,
     subtitleColor: String?,
@@ -29,13 +31,16 @@ public class NativeLiveActivityManagerImpl {
           subtitleColor: subtitleColor,
           progressViewTint: progressViewTint,
           progressViewLabelColor: progressViewLabelColor,
-          deepLinkUrl: deepLink
+          deepLinkUrl: deepLink,
+          contentFit: "contain"
         ),
         content: .init(
           state: LiveActivityAttributes.ContentState(
             title: title,
             subtitle: subtitle,
-            timerEndDateInMilliseconds: timerEnd >= 0 ? timerEnd : nil
+            timerEndDateInMilliseconds: timerEnd >= 0 ? timerEnd : nil,
+            imageName: largeImage,
+            dynamicIslandImageName: smallImage
           ),
           staleDate: nil
         ),
@@ -47,7 +52,14 @@ public class NativeLiveActivityManagerImpl {
   }
 
   @objc
-  public func updateWith(id: String, title: String, subtitle: String?, timerEnd: Double) {
+  public func updateWith(
+    id: String,
+    title: String,
+    subtitle: String?,
+    timerEnd: Double,
+    largeImage: String?,
+    smallImage: String?
+  ) {
     Task {
       await Activity<LiveActivityAttributes>.activities
         .first(where: { $0.id == id })?
@@ -56,7 +68,9 @@ public class NativeLiveActivityManagerImpl {
             state: LiveActivityAttributes.ContentState(
               title: title,
               subtitle: subtitle,
-              timerEndDateInMilliseconds: timerEnd >= 0 ? timerEnd : nil
+              timerEndDateInMilliseconds: timerEnd >= 0 ? timerEnd : nil,
+              imageName: largeImage,
+              dynamicIslandImageName: smallImage
             ),
             staleDate: nil
           )
@@ -65,7 +79,14 @@ public class NativeLiveActivityManagerImpl {
   }
 
   @objc
-  public func endWith(id: String, title: String, subtitle: String?, timerEnd: Double) {
+  public func endWith(
+    id: String,
+    title: String,
+    subtitle: String?,
+    timerEnd: Double,
+    largeImage: String?,
+    smallImage: String?
+  ) {
     Task {
       await Activity<LiveActivityAttributes>.activities
         .first(where: { $0.id == id })?
@@ -74,7 +95,9 @@ public class NativeLiveActivityManagerImpl {
             state: LiveActivityAttributes.ContentState(
               title: title,
               subtitle: subtitle,
-              timerEndDateInMilliseconds: timerEnd >= 0 ? timerEnd : nil
+              timerEndDateInMilliseconds: timerEnd >= 0 ? timerEnd : nil,
+              imageName: largeImage,
+              dynamicIslandImageName: smallImage
             ),
             staleDate: nil
           ),

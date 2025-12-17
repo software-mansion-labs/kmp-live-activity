@@ -18,6 +18,8 @@ public object LiveActivityManager {
       contentState.title,
       contentState.subtitle,
       contentState.timerEnd?.toDouble() ?: -1.0,
+      contentState.largeImage,
+      contentState.smallImage,
       attributes.backgroundColor,
       attributes.titleColor,
       attributes.subtitleColor,
@@ -33,6 +35,8 @@ public object LiveActivityManager {
       contentState.title,
       contentState.subtitle,
       contentState.timerEnd?.toDouble() ?: -1.0,
+      contentState.largeImage,
+      contentState.smallImage,
     )
   }
 
@@ -43,6 +47,8 @@ public object LiveActivityManager {
       contentState.title,
       contentState.subtitle,
       contentState.timerEnd?.toDouble() ?: -1.0,
+      contentState.largeImage,
+      contentState.smallImage,
     )
   }
 }

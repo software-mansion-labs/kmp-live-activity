@@ -25,7 +25,7 @@ dokka {
 
 mavenPublishing {
   coordinates(artifactId = "kmp-live-activity")
-  publishToMavenCentral()
+  publishToMavenCentral(automaticRelease = true)
   signAllPublications()
   pom {
     name = "KMP Live Activity"
